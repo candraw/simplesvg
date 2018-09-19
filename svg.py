@@ -11,6 +11,10 @@ class Scene:
     def add(self, element):
         self.elements.append(element)
 
+    def add_array(self, a):
+        for e in a:
+            self.add(e)
+
     def render(self):
         return '\n'.join([self.header.format(self.height, self.width)] +\
                         [e.render() for e in self.elements] +\
@@ -33,6 +37,9 @@ class Path:
         
         return '<polyline points="{}" stroke="{}" stroke-width="{}" fill="none" />'\
                 .format(pointlist, self.stroke, self.width)
+
+    def from_array(a, stroke="black", width=4):
+        return Path(*a, stroke, width)
 
 class Circle:
     def __init__(self, m, r, stroke="black", fill="none", swidth=4):
