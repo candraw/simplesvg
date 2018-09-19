@@ -1,6 +1,6 @@
 class Scene:
     header = '''<?xml version="1.0" encoding="UTF-8"?>
-<svg xml="https://www.w3.org/2000/svg" version="1.1" height="{}" width="{}">'''
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="{}" width="{}">'''
     footer = '''</svg>'''
 
     def __init__(self, height=500, width=500):
